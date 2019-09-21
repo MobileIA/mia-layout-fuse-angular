@@ -124,6 +124,41 @@
           }
         }
       }
+    },
+    "@mobileia/layout-fuse": {
+      "projectType": "library",
+      "root": "projects/mobileia/layout-fuse",
+      "sourceRoot": "projects/mobileia/layout-fuse/src",
+      "prefix": "mia-fuse",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mobileia/layout-fuse/tsconfig.lib.json",
+            "project": "projects/mobileia/layout-fuse/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mobileia/layout-fuse/src/test.ts",
+            "tsConfig": "projects/mobileia/layout-fuse/tsconfig.spec.json",
+            "karmaConfig": "projects/mobileia/layout-fuse/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mobileia/layout-fuse/tsconfig.lib.json",
+              "projects/mobileia/layout-fuse/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "mia-layout-fuse"
 }

@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@mobileia/layout-fuse": [
+        "dist/mobileia/layout-fuse"
+      ],
+      "@mobileia/layout-fuse/*": [
+        "dist/mobileia/layout-fuse/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
