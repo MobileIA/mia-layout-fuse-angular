@@ -2,11 +2,26 @@
  * Public API Surface of layout-fuse
  */
 
-export * from './lib/layout-fuse.service';
-export * from './lib/layout-fuse.component';
-export * from './lib/layout-fuse.module';
-
 /**
  * Services
  */
 export * from './lib/services/fuse-splash-screen.service';
+
+/**
+ * Components
+ */
+export * from './lib/components/fuse-main-layout/fuse-main-layout.component';
+
+/**
+ * Directives
+ */
+export * from './lib/directives/fuse-perfect-scrollbar.interfaces';
+export * from './lib/directives/fuse-perfect-scrollbar.directive';
+
+/**
+ * Others
+ */
+
+export * from './lib/layout-fuse.service';
+export * from './lib/layout-fuse.component';
+export * from './lib/layout-fuse.module';
