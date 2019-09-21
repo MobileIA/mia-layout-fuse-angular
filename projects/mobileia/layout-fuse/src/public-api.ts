@@ -18,6 +18,12 @@ export * from './lib/components/fuse-main-layout/fuse-main-layout.component';
 export * from './lib/directives/fuse-perfect-scrollbar.interfaces';
 export * from './lib/directives/fuse-perfect-scrollbar.directive';
 
+
+/**
+ * Pages
+ */
+export * from './lib/pages/fuse-login-page/fuse-login-page.component';
+
 /**
  * Others
  */
