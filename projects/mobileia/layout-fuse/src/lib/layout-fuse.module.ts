@@ -20,6 +20,9 @@ import { NavVerticalCollapsableComponent } from './components/fuse-navigation/na
 import { NavVerticalItemComponent } from './components/fuse-navigation/nav-vertical-item/nav-vertical-item.component';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FuseToolbarComponent } from './components/fuse-toolbar/fuse-toolbar.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FuseNavigationComponent,
     NavVerticalGroupComponent,
     NavVerticalCollapsableComponent,
-    NavVerticalItemComponent
+    NavVerticalItemComponent,
+    FuseToolbarComponent
   ],
   imports: [
     RouterModule,
@@ -49,6 +53,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatMenuModule,
+    MatToolbarModule
   ],
   exports: [
     LayoutFuseComponent,
