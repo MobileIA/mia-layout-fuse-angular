@@ -16,9 +16,6 @@ export class FuseSplashScreenService {
     /**
      * Constructor
      *
-     * @param {AnimationBuilder} animationBuilder
-     * @param document
-     * @param {Router} router
      */
     constructor(
         private animationBuilder: AnimationBuilder,

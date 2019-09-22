@@ -25,9 +25,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Constructor
      *
-     * @param {ElementRef} elementRef
-     * @param {Platform} _platform
-     * @param {Router} _router
      */
     constructor(
         public elementRef: ElementRef,
@@ -55,7 +52,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Perfect Scrollbar options
      *
-     * @param value
      */
     @Input()
     set fusePerfectScrollbarOptions(value)
@@ -82,7 +78,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Is enabled
      *
-     * @param {boolean | ""} value
      */
     @Input('fusePerfectScrollbar')
     set enabled(value: boolean | '')
@@ -186,7 +181,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Initialize
      *
-     * @private
      */
     _init(): void
     {
@@ -234,7 +228,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Destroy
      *
-     * @private
      */
     _destroy(): void
     {
@@ -254,7 +247,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Update scrollbars on window resize
      *
-     * @private
      */
     @HostListener('window:resize')
     _updateOnResize(): void
@@ -269,7 +261,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Document click
      *
-     * @param {Event} event
      */
     @HostListener('document:click', ['$event'])
     documentClick(event: Event): void
@@ -311,7 +302,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Returns the geometry of the scrollable element
      *
-     * @param prefix
      */
     geometry(prefix: string = 'scroll'): FusePerfectScrollbarGeometry
     {
@@ -326,7 +316,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Returns the position of the scrollable element
      *
-     * @param absolute
      */
     position(absolute: boolean = false): FusePerfectScrollbarPosition
     {
@@ -349,9 +338,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Scroll to
      *
-     * @param x
-     * @param y
-     * @param speed
      */
     scrollTo(x: number, y?: number, speed?: number): void
     {
@@ -376,8 +362,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Scroll to X
      *
-     * @param {number} x
-     * @param {number} speed
      */
     scrollToX(x: number, speed?: number): void
     {
@@ -387,8 +371,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Scroll to Y
      *
-     * @param {number} y
-     * @param {number} speed
      */
     scrollToY(y: number, speed?: number): void
     {
@@ -398,8 +380,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Scroll to top
      *
-     * @param {number} offset
-     * @param {number} speed
      */
     scrollToTop(offset?: number, speed?: number): void
     {
@@ -409,8 +389,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Scroll to left
      *
-     * @param {number} offset
-     * @param {number} speed
      */
     scrollToLeft(offset?: number, speed?: number): void
     {
@@ -420,8 +398,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Scroll to right
      *
-     * @param {number} offset
-     * @param {number} speed
      */
     scrollToRight(offset?: number, speed?: number): void
     {
@@ -432,8 +408,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Scroll to bottom
      *
-     * @param {number} offset
-     * @param {number} speed
      */
     scrollToBottom(offset?: number, speed?: number): void
     {
@@ -444,9 +418,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Scroll to element
      *
-     * @param qs
-     * @param offset
-     * @param speed
      */
     scrollToElement(qs: string, offset?: number, speed?: number): void
     {
@@ -480,9 +451,6 @@ export class FusePerfectScrollbarDirective implements OnInit, AfterViewInit, OnD
     /**
      * Animate scrolling
      *
-     * @param target
-     * @param value
-     * @param speed
      */
     animateScrolling(target: string, value: number, speed?: number): void
     {

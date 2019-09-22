@@ -11,6 +11,8 @@ body {
 }
 
 // Import Fuse core library
-//@import "~@mobileia/layout-fuse/scss/core";
+@import "../projects/mobileia/layout-fuse/src/lib/scss/core.scss"; // Modo interno
+//@import "~@mobileia/layout-fuse/scss/core"; // Modo productivo
 // Import app.theme.scss
-//@import "app/app.theme";
+@import "../projects/mobileia/layout-fuse/src/lib/scss/app.theme.scss"; // Modo interno
+//@import "~@mobileia/layout-fuse/scss/app.theme"; // Modo productivo
