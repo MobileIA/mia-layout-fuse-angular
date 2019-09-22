@@ -25,9 +25,6 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     /**
      * Constructor
      *
-     * @param {FuseConfigService} _fuseConfigService
-     * @param {FuseSidebarService} _fuseSidebarService
-     * @param {TranslateService} _translateService
      */
     constructor(
         private _fuseConfigService: FuseConfigService,
@@ -122,7 +119,6 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     /**
      * Toggle sidebar open
      *
-     * @param key
      */
     toggleSidebarOpen(key): void
     {
@@ -132,7 +128,6 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     /**
      * Search
      *
-     * @param value
      */
     search(value): void
     {
@@ -143,7 +138,6 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     /**
      * Set the language
      *
-     * @param lang
      */
     setLanguage(lang): void
     {

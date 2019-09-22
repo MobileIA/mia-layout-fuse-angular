@@ -189,7 +189,6 @@ export class FuseNavigationService {
   /**
    * Get the current navigation
    *
-   * @returns {any}
    */
   getCurrentNavigation(): any
   {

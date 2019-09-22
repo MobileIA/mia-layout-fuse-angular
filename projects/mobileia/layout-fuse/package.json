@@ -1,12 +1,15 @@
 {
     "name": "@mobileia/layout-fuse",
-    "version": "8.0.3",
+    "version": "8.0.4",
     "peerDependencies": {
         "@angular/common": "^8.2.7",
         "@angular/core": "^8.2.7",
         "@angular/material": "^8.2.0",
         "@angular/forms": "~8.2.7",
         "@mobileia/authentication": "^8.0.1",
-        "@mobileia/core": "^8.0.1"
+        "@mobileia/core": "^8.0.1",
+        "@swimlane/ngx-datatable": "^16.0.2",
+        "@angular/flex-layout": "^8.0.0-beta.27",
+        "perfect-scrollbar": "^1.4.0"
     }
 }

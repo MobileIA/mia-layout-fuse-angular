@@ -189,9 +189,6 @@ export class NavVerticalCollapsableComponent implements OnInit, OnDestroy {
    * Check if the given parent has the
    * given item in one of its children
    *
-   * @param parent
-   * @param item
-   * @returns {boolean}
    */
   isChildrenOf(parent, item): boolean
   {

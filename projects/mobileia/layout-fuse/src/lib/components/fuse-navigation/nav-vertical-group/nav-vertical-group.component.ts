@@ -26,8 +26,6 @@ export class NavVerticalGroupComponent implements OnInit {
 
     /**
      *
-     * @param {ChangeDetectorRef} _changeDetectorRef
-     * @param {FuseNavigationService} _fuseNavigationService
      */
     constructor(
         private _changeDetectorRef: ChangeDetectorRef,

@@ -60,7 +60,6 @@ export class FuseConfigService {
   /**
    * Get default config
    *
-   * @returns {any}
    */
   get defaultConfig(): any
   {
@@ -74,7 +73,6 @@ export class FuseConfigService {
   /**
    * Initialize
    *
-   * @private
    */
   private _init(): void
   {
