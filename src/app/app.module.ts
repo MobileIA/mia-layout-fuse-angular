@@ -8,12 +8,14 @@ import { LayoutFuseModule } from 'projects/mobileia/layout-fuse/src/lib/layout-f
 import { LayoutComponent } from './pages/layout/layout.component';
 import { fuseConfig } from './pages/layout/fuse-config';
 import { TestComponent } from './pages/test/test.component';
+import { TestTwoComponent } from './pages/test-two/test-two.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    TestComponent
+    TestComponent,
+    TestTwoComponent
   ],
   imports: [
     BrowserModule,

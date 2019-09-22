@@ -3,20 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 import { FuseLoginPageComponent } from 'projects/mobileia/layout-fuse/src/public-api';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { TestComponent } from './pages/test/test.component';
+import { TestTwoComponent } from './pages/test-two/test-two.component';
 
 
 const routes: Routes = [
   {
-    path: 'inicio',
-    component: LayoutComponent
-  },
-  {
-    path: 'system',
+    path: '',
     component: LayoutComponent,
     children: [
       {
         path: 'test',
         component: TestComponent
+      },
+      {
+        path: 'test-two',
+        component: TestTwoComponent
       },
     ]
   },
