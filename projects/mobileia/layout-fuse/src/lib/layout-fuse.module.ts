@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Optional, SkipSelf, ModuleWithProviders } from '@angular/core';
 import { LayoutFuseComponent } from './layout-fuse.component';
 import { FuseMainLayoutComponent } from './components/fuse-main-layout/fuse-main-layout.component';
 import { FusePerfectScrollbarDirective } from './directives/fuse-perfect-scrollbar.directive';
@@ -11,6 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FuseNavbarComponent } from './components/fuse-navbar/fuse-navbar.component';
+import { FUSE_CONFIG } from './services/fuse-config.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FuseMainLayoutComponent,
     FusePerfectScrollbarDirective,
     FuseSidebarComponent,
-    FuseLoginPageComponent
+    FuseLoginPageComponent,
+    FuseNavbarComponent
   ],
   imports: [
     FormsModule,
@@ -36,7 +39,27 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     LayoutFuseComponent,
     FuseMainLayoutComponent,
     FusePerfectScrollbarDirective,
-    FuseLoginPageComponent
+    FuseLoginPageComponent,
+    FuseSidebarComponent
   ]
 })
-export class LayoutFuseModule { }
+export class LayoutFuseModule {
+
+  constructor(@Optional() @SkipSelf() parentModule: LayoutFuseModule) {
+      if ( parentModule ) {
+          throw new Error('FuseModule is already loaded. Import it in the AppModule only!');
+      }
+  }
+
+  static forRoot(config): ModuleWithProviders {
+      return {
+          ngModule : LayoutFuseModule,
+          providers: [
+              {
+                  provide : FUSE_CONFIG,
+                  useValue: config
+              }
+          ]
+      };
+  }
+}
