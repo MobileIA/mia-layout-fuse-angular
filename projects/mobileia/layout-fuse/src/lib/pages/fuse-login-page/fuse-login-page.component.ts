@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { fuseAnimations } from '../../animations';
 
@@ -6,6 +6,7 @@ import { fuseAnimations } from '../../animations';
   selector: 'mia-fuse-login-page',
   templateUrl: './fuse-login-page.component.html',
   styleUrls: ['./fuse-login-page.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   animations   : fuseAnimations
 })
 export class FuseLoginPageComponent implements OnInit {
