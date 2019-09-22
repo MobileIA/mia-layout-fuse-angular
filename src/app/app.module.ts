@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutFuseModule } from 'projects/mobileia/layout-fuse/src/lib/layout-fuse.module';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { fuseConfig } from './pages/layout/fuse-config';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { LayoutComponent } from './pages/layout/layout.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    LayoutFuseModule
+    LayoutFuseModule.forRoot(fuseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

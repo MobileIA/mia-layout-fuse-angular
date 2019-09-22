@@ -3,21 +3,29 @@
  */
 
 /**
+ * Class / Types
+ */
+export * from './lib/types/fuse-config';
+export * from './lib/types/fuse-navigation-item';
+
+/**
  * Services
  */
 export * from './lib/services/fuse-splash-screen.service';
+export * from './lib/services/fuse-config.service';
 
 /**
  * Components
  */
 export * from './lib/components/fuse-main-layout/fuse-main-layout.component';
+export * from './lib/components/fuse-sidebar/fuse-sidebar.component';
+export * from './lib/components/fuse-navbar/fuse-navbar.component';
 
 /**
  * Directives
  */
 export * from './lib/directives/fuse-perfect-scrollbar.interfaces';
 export * from './lib/directives/fuse-perfect-scrollbar.directive';
-
 
 /**
  * Pages

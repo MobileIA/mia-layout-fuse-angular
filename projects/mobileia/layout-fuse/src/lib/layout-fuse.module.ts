@@ -13,6 +13,12 @@ import { MatInputModule } from '@angular/material/input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FuseNavbarComponent } from './components/fuse-navbar/fuse-navbar.component';
 import { FUSE_CONFIG } from './services/fuse-config.service';
+import { NavbarStyleOneComponent } from './components/fuse-navbar/navbar-style-one/navbar-style-one.component';
+import { FuseNavigationComponent } from './components/fuse-navigation/fuse-navigation.component';
+import { NavVerticalGroupComponent } from './components/fuse-navigation/nav-vertical-group/nav-vertical-group.component';
+import { NavVerticalCollapsableComponent } from './components/fuse-navigation/nav-vertical-collapsable/nav-vertical-collapsable.component';
+import { NavVerticalItemComponent } from './components/fuse-navigation/nav-vertical-item/nav-vertical-item.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,9 +27,15 @@ import { FUSE_CONFIG } from './services/fuse-config.service';
     FusePerfectScrollbarDirective,
     FuseSidebarComponent,
     FuseLoginPageComponent,
-    FuseNavbarComponent
+    FuseNavbarComponent,
+    NavbarStyleOneComponent,
+    FuseNavigationComponent,
+    NavVerticalGroupComponent,
+    NavVerticalCollapsableComponent,
+    NavVerticalItemComponent
   ],
   imports: [
+    RouterModule,
     FormsModule,
     ReactiveFormsModule,
 
