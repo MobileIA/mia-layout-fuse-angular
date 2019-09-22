@@ -17,11 +17,11 @@
                 <!-- / TOOLBAR: Below static -->
 
                 <!-- CONTENT -->
-                <content></content>
+                <router-outlet></router-outlet>
                 <!-- / CONTENT -->
 
                 <!-- FOOTER: Below static -->
-                <!--<footer [ngClass]="fuseConfig.layout.footer.customBackgroundColor === true ? fuseConfig.layout.footer.position + ' ' + fuseConfig.layout.footer.background : fuseConfig.layout.footer.position"></footer>-->
+                <mia-fuse-footer [ngClass]="fuseConfig.layout.footer.customBackgroundColor === true ? fuseConfig.layout.footer.position + ' ' + fuseConfig.layout.footer.background : fuseConfig.layout.footer.position"></mia-fuse-footer>
                 <!-- / FOOTER: Below static -->
 
             </div>

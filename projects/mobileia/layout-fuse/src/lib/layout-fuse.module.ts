@@ -23,6 +23,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FuseToolbarComponent } from './components/fuse-toolbar/fuse-toolbar.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { FuseFooterComponent } from './components/fuse-footer/fuse-footer.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     NavVerticalGroupComponent,
     NavVerticalCollapsableComponent,
     NavVerticalItemComponent,
-    FuseToolbarComponent
+    FuseToolbarComponent,
+    FuseFooterComponent
   ],
   imports: [
     RouterModule,
