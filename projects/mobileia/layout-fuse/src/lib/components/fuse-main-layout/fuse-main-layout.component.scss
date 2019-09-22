@@ -1,4 +1,14 @@
 @import "../../scss/fuse.scss";
+html {
+    font-size: 62.5%;
+    line-height: 1.4 !important;
+    letter-spacing: -0.1px !important;
+}
+
+body {
+    font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
 mia-fuse-main-layout {
     display: flex;
     flex: 1 1 auto;
