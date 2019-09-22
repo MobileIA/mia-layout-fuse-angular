@@ -1,15 +1,17 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { FusePerfectScrollbarDirective } from '../../../directives/fuse-perfect-scrollbar.directive';
 import { Subject } from 'rxjs';
 import { FuseConfigService } from '../../../services/fuse-config.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter, takeUntil, take, delay } from 'rxjs/operators';
 import { FuseNavigationService } from '../../../services/fuse-navigation.service';
+import { FuseSidebarService } from '../../../services/fuse-sidebar.service';
 
 @Component({
   selector: 'mia-fuse-navbar-style-one',
   templateUrl: './navbar-style-one.component.html',
-  styleUrls: ['./navbar-style-one.component.scss']
+  styleUrls: ['./navbar-style-one.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class NavbarStyleOneComponent implements OnInit {
 
@@ -23,7 +25,7 @@ export class NavbarStyleOneComponent implements OnInit {
   constructor(
     private fuseConfigService: FuseConfigService,
     private fuseNavigationService: FuseNavigationService,
-    //private fuseSidebarService: FuseSidebarService,
+    private fuseSidebarService: FuseSidebarService,
     private router: Router
   ) {
     // Set the private defaults
@@ -81,10 +83,10 @@ export class NavbarStyleOneComponent implements OnInit {
                 takeUntil(this.unsubscribeAll)
             )
             .subscribe(() => {
-                    /*if ( this._fuseSidebarService.getSidebar('navbar') )
+                    if ( this.fuseSidebarService.getSidebar('navbar') )
                     {
-                        this._fuseSidebarService.getSidebar('navbar').close();
-                    }*/
+                        this.fuseSidebarService.getSidebar('navbar').close();
+                    }
                 }
             );
 
@@ -123,14 +125,14 @@ export class NavbarStyleOneComponent implements OnInit {
      * Toggle sidebar opened status
      */
     toggleSidebarOpened(): void {
-        //this.fuseSidebarService.getSidebar('navbar').toggleOpen();
+        this.fuseSidebarService.getSidebar('navbar').toggleOpen();
     }
 
     /**
      * Toggle sidebar folded status
      */
     toggleSidebarFolded(): void {
-        //this.fuseSidebarService.getSidebar('navbar').toggleFold();
+        this.fuseSidebarService.getSidebar('navbar').toggleFold();
     }
 
 }

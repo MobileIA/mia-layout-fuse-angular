@@ -13,6 +13,8 @@ export * from './lib/types/fuse-navigation-item';
  */
 export * from './lib/services/fuse-splash-screen.service';
 export * from './lib/services/fuse-config.service';
+export * from './lib/services/fuse-sidebar.service';
+export * from './lib/services/fuse-match-media.service';
 
 /**
  * Components

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { Subject, merge } from 'rxjs';
 import { FuseNavigationService } from '../../services/fuse-navigation.service';
 import { takeUntil } from 'rxjs/operators';
@@ -6,7 +6,9 @@ import { takeUntil } from 'rxjs/operators';
 @Component({
   selector: 'mia-fuse-navigation',
   templateUrl: './fuse-navigation.component.html',
-  styleUrls: ['./fuse-navigation.component.scss']
+  styleUrls: ['./fuse-navigation.component.scss'],
+  encapsulation  : ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FuseNavigationComponent implements OnInit {
 

@@ -19,6 +19,7 @@ import { NavVerticalGroupComponent } from './components/fuse-navigation/nav-vert
 import { NavVerticalCollapsableComponent } from './components/fuse-navigation/nav-vertical-collapsable/nav-vertical-collapsable.component';
 import { NavVerticalItemComponent } from './components/fuse-navigation/nav-vertical-item/nav-vertical-item.component';
 import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,8 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+
+    FlexLayoutModule,
 
     BrowserAnimationsModule,
 

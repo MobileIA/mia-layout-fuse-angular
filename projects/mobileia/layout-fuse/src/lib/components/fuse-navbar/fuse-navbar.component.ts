@@ -1,9 +1,10 @@
-import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'mia-fuse-navbar',
   templateUrl: './fuse-navbar.component.html',
-  styleUrls: ['./fuse-navbar.component.scss']
+  styleUrls: ['./fuse-navbar.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FuseNavbarComponent implements OnInit {
 
