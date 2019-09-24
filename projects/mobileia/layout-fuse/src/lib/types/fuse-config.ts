@@ -10,7 +10,8 @@ export interface FuseConfig {
             hidden: boolean,
             folded: boolean,
             position: 'left' | 'right' | 'top',
-            variant: string
+            variant: string,
+            showUser: boolean
         },
         toolbar: {
             customBackgroundColor: boolean,
