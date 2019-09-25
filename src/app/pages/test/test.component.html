@@ -1,9 +1,14 @@
 <div class="page-layout simple fullwidth">
 
     <!-- HEADER -->
-    <div class="header accent p-24" fxLayout="row" fxLayoutAlign="start center">
-        <h2>Full width</h2>
-    </div>
+    <mia-fuse-header [title]="'Full Width'">
+        <!-- ADD BUTTON -->
+        <button mat-button [routerLink]="'/apps/e-commerce/products/new'" class="mt-24 mt-md-0">
+            <mat-icon>arrow_back</mat-icon>
+            <span>Volver</span>
+        </button>
+        <!-- / ADD BUTTON -->
+    </mia-fuse-header>
     <!-- / HEADER -->
 
     <!-- CONTENT -->
