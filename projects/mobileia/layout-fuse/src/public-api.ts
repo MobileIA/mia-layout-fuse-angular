@@ -7,6 +7,7 @@
  */
 export * from './lib/types/fuse-config';
 export * from './lib/types/fuse-navigation-item';
+export * from './lib/animations/index';
 
 /**
  * Services
