@@ -68,7 +68,8 @@ import { FuseWidgetComponent } from './components/fuse-widget/fuse-widget.compon
     FusePerfectScrollbarDirective,
     FuseLoginPageComponent,
     FuseSidebarComponent,
-    FuseHeaderComponent
+    FuseHeaderComponent,
+    FuseWidgetComponent
   ]
 })
 export class LayoutFuseModule {
