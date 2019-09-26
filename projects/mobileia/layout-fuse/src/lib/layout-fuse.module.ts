@@ -25,6 +25,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FuseFooterComponent } from './components/fuse-footer/fuse-footer.component';
 import { FuseHeaderComponent } from './components/fuse-header/fuse-header.component';
+import { FuseWidgetComponent } from './components/fuse-widget/fuse-widget.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FuseHeaderComponent } from './components/fuse-header/fuse-header.compon
     NavVerticalItemComponent,
     FuseToolbarComponent,
     FuseFooterComponent,
-    FuseHeaderComponent
+    FuseHeaderComponent,
+    FuseWidgetComponent
   ],
   imports: [
     RouterModule,
