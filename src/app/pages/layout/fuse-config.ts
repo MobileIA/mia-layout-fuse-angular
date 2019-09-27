@@ -14,7 +14,9 @@ export const fuseConfig: FuseConfig = {
             hidden             : false,
             position           : 'left',
             variant            : 'vertical-style-1',
-            showUser           : false
+            showUser           : false,
+            title              : 'FUSE',
+            iconUrl            : 'assets/images/logos/fuse.svg'
         },
         toolbar  : {
             customBackgroundColor: false,

@@ -11,7 +11,9 @@ export interface FuseConfig {
             folded: boolean,
             position: 'left' | 'right' | 'top',
             variant: string,
-            showUser: boolean
+            showUser: boolean,
+            title: string,
+            iconUrl: string
         },
         toolbar: {
             customBackgroundColor: boolean,
