@@ -3,6 +3,7 @@ export interface FuseLoginConfig {
     imageLogo: string;
     title: string;
     btnColorClass: string;
+    titleBtn: string;
     isRecovery: boolean;
     isRegister: boolean;
     isRemember: boolean;

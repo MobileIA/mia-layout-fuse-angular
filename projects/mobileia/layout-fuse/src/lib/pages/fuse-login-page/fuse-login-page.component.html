@@ -13,10 +13,10 @@
                         <div id="login-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
 
                             <div class="logo">
-                                <img src="assets/images/logos/fuse.svg">
+                                <img [src]="config.imageLogo">
                             </div>
 
-                            <div class="title">LOGIN TO YOUR ACCOUNT</div>
+                            <div class="title">{{ config.title }}</div>
 
                             <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
 
@@ -43,21 +43,21 @@
                                 </mat-form-field>
 
                                 <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
-                                    <mat-checkbox class="remember-me" aria-label="Remember Me">
+                                    <mat-checkbox *ngIf="config.isRemember" class="remember-me" aria-label="Remember Me">
                                         Remember Me
                                     </mat-checkbox>
 
                                     <!--<a class="forgot-password" [routerLink]="'/pages/auth/forgot-password'">-->
-                                    <a href="#" class="forgot-password">Forgot Password?</a>
+                                    <a *ngIf="config.isRecovery" href="#" class="forgot-password">Forgot Password?</a>
                                 </div>
 
-                                <button mat-raised-button color="accent" type="submit" class="submit-button" aria-label="LOG IN" [disabled]="loginForm.invalid">
-                                LOGIN
-                            </button>
+                                <button mat-raised-button color="accent" type="submit" class="submit-button" aria-label="{{ config.titleBtn }}" [disabled]="loginForm.invalid">
+                                    {{ config.titleBtn }}
+                                </button>
 
                             </form>
 
-                            <div class="separator">
+                            <div *ngIf="config.isRegister" class="separator">
                                 <span class="text">OR</span>
                             </div>
 
@@ -69,7 +69,7 @@
                             Log in with Facebook
                         </button>-->
 
-                            <div class="register" fxLayout="column" fxLayoutAlign="center center">
+                            <div *ngIf="config.isRegister" class="register" fxLayout="column" fxLayoutAlign="center center">
                                 <span class="text">Don't have an account?</span>
                                 <!--<a class="link" [routerLink]="'/pages/auth/register'">Create an account</a>-->
                                 <a class="link">Create an account</a>
