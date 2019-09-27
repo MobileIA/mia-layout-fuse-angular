@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { fuseAnimations } from '../../animations';
+import { FuseLoginConfig } from '../../types/fuse-login-config';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'mia-fuse-login-page',
@@ -12,14 +14,30 @@ import { fuseAnimations } from '../../animations';
 export class FuseLoginPageComponent implements OnInit {
 
   loginForm: FormGroup;
+  config: FuseLoginConfig;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router
   ) {
     this.buildForm();
   }
 
   ngOnInit() {
+    this.processConfig();
+  }
+
+  onSubmit() {
+    this.router.navigateByUrl(this.config.successRoute);
+  }
+
+  processConfig() {
+    this.route.data.subscribe(params => {
+      if (params.config) {
+        this.config = params.config;
+      }
+    });
   }
 
   buildForm() {

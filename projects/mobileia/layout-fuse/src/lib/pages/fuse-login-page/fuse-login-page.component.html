@@ -18,7 +18,7 @@
 
                             <div class="title">LOGIN TO YOUR ACCOUNT</div>
 
-                            <form name="loginForm" [formGroup]="loginForm" novalidate>
+                            <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
 
                                 <mat-form-field appearance="outline">
                                     <mat-label>Email</mat-label>
@@ -51,7 +51,7 @@
                                     <a href="#" class="forgot-password">Forgot Password?</a>
                                 </div>
 
-                                <button mat-raised-button color="accent" class="submit-button" aria-label="LOG IN" [disabled]="loginForm.invalid">
+                                <button mat-raised-button color="accent" type="submit" class="submit-button" aria-label="LOG IN" [disabled]="loginForm.invalid">
                                 LOGIN
                             </button>
 
