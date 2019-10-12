@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { FuseConfigService } from '../../services/fuse-config.service';
 import { FuseSidebarService } from '../../services/fuse-sidebar.service';
 import { takeUntil } from 'rxjs/operators';
+import { FuseNavigationItem } from '../../types/fuse-navigation-item';
 
 @Component({
   selector: 'mia-fuse-toolbar',
@@ -18,6 +19,7 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     navigation: any;
     //selectedLanguage: any;
     userStatusOptions: any[];
+    userMenuList: FuseNavigationItem[];
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -96,6 +98,7 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
                 this.horizontalNavbar = settings.layout.navbar.position === 'top';
                 this.rightNavbar = settings.layout.navbar.position === 'right';
                 this.hiddenNavbar = settings.layout.navbar.hidden === true;
+                this.userMenuList = settings.layout.toolbar.userMenu;
             });
 
         // Set the selected language from default languages

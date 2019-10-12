@@ -10,7 +10,7 @@ export interface FuseNavigationItem {
     exactMatch?: boolean;
     externalUrl?: boolean;
     openInNewTab?: boolean;
-    function?: any;
+    function?(): void;
     badge?: {
         title?: string;
         translate?: string;
