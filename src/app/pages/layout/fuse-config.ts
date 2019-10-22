@@ -22,12 +22,13 @@ export const fuseConfig: FuseConfig = {
             customBackgroundColor: false,
             background           : 'fuse-white-500',
             hidden               : false,
-            position             : 'below-static'
+            position             : 'below-static',
+            userMenu: []
         },
         footer   : {
             customBackgroundColor: true,
             background           : 'fuse-navy-900',
-            hidden               : false,
+            hidden               : true,
             position             : 'below-static'
         },
         sidepanel: {

@@ -21,7 +21,7 @@
                 <!-- / CONTENT -->
 
                 <!-- FOOTER: Below static -->
-                <mia-fuse-footer [ngClass]="fuseConfig.layout.footer.customBackgroundColor === true ? fuseConfig.layout.footer.position + ' ' + fuseConfig.layout.footer.background : fuseConfig.layout.footer.position"></mia-fuse-footer>
+                <mia-fuse-footer *ngIf="fuseConfig.layout.footer.hidden !== true" [ngClass]="fuseConfig.layout.footer.customBackgroundColor === true ? fuseConfig.layout.footer.position + ' ' + fuseConfig.layout.footer.background : fuseConfig.layout.footer.position"></mia-fuse-footer>
                 <!-- / FOOTER: Below static -->
 
             </div>
