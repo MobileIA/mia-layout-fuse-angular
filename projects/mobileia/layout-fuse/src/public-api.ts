@@ -8,6 +8,7 @@
 export * from './lib/types/fuse-config';
 export * from './lib/types/fuse-navigation-item';
 export * from './lib/types/fuse-login-config';
+export * from './lib/types/fuse-notification';
 export * from './lib/animations/index';
 
 /**
@@ -18,6 +19,7 @@ export * from './lib/services/fuse-config.service';
 export * from './lib/services/fuse-sidebar.service';
 export * from './lib/services/fuse-match-media.service';
 export * from './lib/services/fuse-navigation.service';
+export * from './lib/services/fuse-notification.service';
 
 /**
  * Components

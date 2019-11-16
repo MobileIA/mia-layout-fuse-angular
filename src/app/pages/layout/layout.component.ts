@@ -8,6 +8,7 @@ import { FuseSplashScreenService } from 'projects/mobileia/layout-fuse/src/lib/s
 import { Platform } from '@angular/cdk/platform';
 import { takeUntil } from 'rxjs/operators';
 import { navigation } from './fuse-navigation';
+import { FuseNotificationService } from 'projects/mobileia/layout-fuse/src/public-api';
 
 @Component({
   selector: 'app-layout',
@@ -42,7 +43,8 @@ export class LayoutComponent implements OnInit, OnDestroy {
         private _fuseSplashScreenService: FuseSplashScreenService,
         //private _fuseTranslationLoaderService: FuseTranslationLoaderService,
         //private _translateService: TranslateService,
-        private _platform: Platform
+        private _platform: Platform,
+        private fuseNotification: FuseNotificationService
     )
     {
         // Get default navigation
@@ -107,6 +109,11 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
         // Set the private defaults
         this._unsubscribeAll = new Subject();
+
+
+        this.fuseNotification.onClickNotification().subscribe(notif => {
+            console.log(notif);
+        });
     }
 
     // -----------------------------------------------------------------------------------------------------

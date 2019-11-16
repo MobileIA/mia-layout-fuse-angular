@@ -4,6 +4,8 @@ import { FuseConfigService } from '../../services/fuse-config.service';
 import { FuseSidebarService } from '../../services/fuse-sidebar.service';
 import { takeUntil } from 'rxjs/operators';
 import { FuseNavigationItem } from '../../types/fuse-navigation-item';
+import { FuseNotificationService } from '../../services/fuse-notification.service';
+import { FuseNotification } from '../../types/fuse-notification';
 
 @Component({
   selector: 'mia-fuse-toolbar',
@@ -23,6 +25,9 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     isShowAvatar = true;
     userName = '';
     userAvatarUrl = '';
+    isShowNotifications = false;
+    notifications = [];
+    countNotifications = 0;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -34,6 +39,7 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _fuseSidebarService: FuseSidebarService,
+        private fuseNotificationService: FuseNotificationService
         //private _translateService: TranslateService
     )
     {
@@ -105,6 +111,9 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
                 this.userAvatarUrl = settings.layout.toolbar.userAvatarUrl;
                 this.userName = settings.layout.toolbar.userName;
                 this.isShowAvatar = settings.layout.toolbar.showAvatar;
+                this.isShowNotifications = settings.layout.toolbar.showNotifications;
+                this.notifications = settings.layout.toolbar.notifications;
+                this.countNotifications = settings.layout.toolbar.countNotifications;
             });
 
         // Set the selected language from default languages
@@ -119,6 +128,10 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
         // Unsubscribe from all subscriptions
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
+    }
+
+    onClickNotification(notif: FuseNotification) {
+        this.fuseNotificationService.clickNotification.next(notif);
     }
 
     // -----------------------------------------------------------------------------------------------------

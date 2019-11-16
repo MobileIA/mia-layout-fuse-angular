@@ -1,4 +1,5 @@
 import { FuseConfig } from 'projects/mobileia/layout-fuse/src/lib/types/fuse-config';
+import { FuseNotification } from 'projects/mobileia/layout-fuse/src/public-api';
 
 export const fuseConfig: FuseConfig = {
     // Color themes can be defined in src/app/app.theme.scss
@@ -26,7 +27,19 @@ export const fuseConfig: FuseConfig = {
             userMenu: [],
             showAvatar: false,
             userName: 'Matias Camiletti',
-            userAvatarUrl: ''
+            userAvatarUrl: '',
+            showNotifications: true,
+            notifications: [
+                {
+                    caption: 'Admininstración te asignó permisos para el barco [Nombre].',
+                    created_at: '2019-10-10 22:00:00'
+                } as FuseNotification,
+                {
+                    caption: 'Admininstración te asignó permisos para el barco [Nombre].',
+                    created_at: '2019-10-10 22:00:00'
+                } as FuseNotification
+            ],
+            countNotifications: 0
         },
         footer   : {
             customBackgroundColor: true,

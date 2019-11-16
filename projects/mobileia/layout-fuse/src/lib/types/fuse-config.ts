@@ -1,4 +1,5 @@
 import { FuseNavigationItem } from './fuse-navigation-item';
+import { FuseNotification } from './fuse-notification';
 
 export interface FuseConfig {
     colorTheme: string;
@@ -25,7 +26,10 @@ export interface FuseConfig {
             userMenu: FuseNavigationItem[],
             userName: string,
             userAvatarUrl: string,
-            showAvatar: boolean
+            showAvatar: boolean,
+            showNotifications: boolean,
+            notifications: FuseNotification[]
+            countNotifications: number
         }
         footer: {
             customBackgroundColor: boolean,
