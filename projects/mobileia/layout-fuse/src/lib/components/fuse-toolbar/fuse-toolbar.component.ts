@@ -20,6 +20,9 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     //selectedLanguage: any;
     userStatusOptions: any[];
     userMenuList: FuseNavigationItem[];
+    isShowAvatar = true;
+    userName = '';
+    userAvatarUrl = '';
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -99,6 +102,9 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
                 this.rightNavbar = settings.layout.navbar.position === 'right';
                 this.hiddenNavbar = settings.layout.navbar.hidden === true;
                 this.userMenuList = settings.layout.toolbar.userMenu;
+                this.userAvatarUrl = settings.layout.toolbar.userAvatarUrl;
+                this.userName = settings.layout.toolbar.userName;
+                this.isShowAvatar = settings.layout.toolbar.showAvatar;
             });
 
         // Set the selected language from default languages

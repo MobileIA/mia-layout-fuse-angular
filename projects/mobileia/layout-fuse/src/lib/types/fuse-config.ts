@@ -22,7 +22,10 @@ export interface FuseConfig {
             background: string,
             hidden: boolean,
             position: 'above' | 'above-static' | 'above-fixed' | 'below' | 'below-static' | 'below-fixed',
-            userMenu: FuseNavigationItem[]
+            userMenu: FuseNavigationItem[],
+            userName: string,
+            userAvatarUrl: string,
+            showAvatar: boolean
         }
         footer: {
             customBackgroundColor: boolean,

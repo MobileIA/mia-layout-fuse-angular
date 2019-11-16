@@ -23,7 +23,10 @@ export const fuseConfig: FuseConfig = {
             background           : 'fuse-white-500',
             hidden               : false,
             position             : 'below-static',
-            userMenu: []
+            userMenu: [],
+            showAvatar: false,
+            userName: 'Matias Camiletti',
+            userAvatarUrl: ''
         },
         footer   : {
             customBackgroundColor: true,
