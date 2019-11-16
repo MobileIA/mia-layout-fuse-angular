@@ -14,7 +14,7 @@ export const FUSE_CONFIG = new InjectionToken('fuseCustomConfig');
 export class FuseConfigService {
   // Private
   private _configSubject: BehaviorSubject<any>;
-  private readonly _defaultConfig: any;
+  private _defaultConfig: any;
 
   /**
    * Constructor
@@ -89,7 +89,7 @@ export class FuseConfigService {
 
       // Reload the default layout config on every RoutesRecognized event
       // if the current layout config is different from the default one
-      this._router.events
+      /*this._router.events
           .pipe(filter(event => event instanceof ResolveEnd))
           .subscribe(() => {
               if ( !_.isEqual(this._configSubject.getValue().layout, this._defaultConfig.layout) )
@@ -103,7 +103,7 @@ export class FuseConfigService {
                   // Set the config
                   this._configSubject.next(config);
               }
-          });
+          });*/
   }
 
   // -----------------------------------------------------------------------------------------------------
@@ -128,6 +128,10 @@ export class FuseConfigService {
           // Notify the observers
           this._configSubject.next(config);
       }
+  }
+
+  setDefault(config): void {
+    this._defaultConfig = config;
   }
 
   /**

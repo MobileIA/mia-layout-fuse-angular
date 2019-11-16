@@ -1,6 +1,6 @@
 {
     "name": "@mobileia/layout-fuse",
-    "version": "8.0.23",
+    "version": "8.0.24",
     "peerDependencies": {
         "@angular/common": "^8.2.7",
         "@angular/core": "^8.2.7",
