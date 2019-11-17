@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { FuseNotification } from '../types/fuse-notification';
+import { MiaNotification } from '@mobileia/notification';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FuseNotificationService {
 
-  clickNotification = new Subject<FuseNotification>();
+  clickNotification = new Subject<MiaNotification>();
 
   constructor() { }
 
-  onClickNotification(): Observable<FuseNotification> {
+  onClickNotification(): Observable<MiaNotification> {
     return this.clickNotification;
   }
 }

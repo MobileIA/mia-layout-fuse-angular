@@ -8,7 +8,6 @@
 export * from './lib/types/fuse-config';
 export * from './lib/types/fuse-navigation-item';
 export * from './lib/types/fuse-login-config';
-export * from './lib/types/fuse-notification';
 export * from './lib/animations/index';
 
 /**

@@ -1,5 +1,5 @@
 import { FuseConfig } from 'projects/mobileia/layout-fuse/src/lib/types/fuse-config';
-import { FuseNotification } from 'projects/mobileia/layout-fuse/src/public-api';
+import { MiaNotification } from '@mobileia/notification';
 
 export const fuseConfig: FuseConfig = {
     // Color themes can be defined in src/app/app.theme.scss
@@ -33,11 +33,11 @@ export const fuseConfig: FuseConfig = {
                 {
                     caption: 'Admininstración te asignó permisos para el barco [Nombre].',
                     created_at: '2019-10-10 22:00:00'
-                } as FuseNotification,
+                } as MiaNotification,
                 {
                     caption: 'Admininstración te asignó permisos para el barco [Nombre].',
                     created_at: '2019-10-10 22:00:00'
-                } as FuseNotification
+                } as MiaNotification
             ],
             countNotifications: 0
         },

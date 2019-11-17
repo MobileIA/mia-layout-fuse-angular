@@ -5,7 +5,7 @@ import { FuseSidebarService } from '../../services/fuse-sidebar.service';
 import { takeUntil } from 'rxjs/operators';
 import { FuseNavigationItem } from '../../types/fuse-navigation-item';
 import { FuseNotificationService } from '../../services/fuse-notification.service';
-import { FuseNotification } from '../../types/fuse-notification';
+import { MiaNotification } from '@mobileia/notification';
 
 @Component({
   selector: 'mia-fuse-toolbar',
@@ -130,7 +130,7 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
         this._unsubscribeAll.complete();
     }
 
-    onClickNotification(notif: FuseNotification) {
+    onClickNotification(notif: MiaNotification) {
         this.fuseNotificationService.clickNotification.next(notif);
     }
 

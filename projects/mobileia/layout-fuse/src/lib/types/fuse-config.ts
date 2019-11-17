@@ -1,5 +1,5 @@
 import { FuseNavigationItem } from './fuse-navigation-item';
-import { FuseNotification } from './fuse-notification';
+import { MiaNotification } from '@mobileia/notification';
 
 export interface FuseConfig {
     colorTheme: string;
@@ -28,7 +28,7 @@ export interface FuseConfig {
             userAvatarUrl: string,
             showAvatar: boolean,
             showNotifications: boolean,
-            notifications: FuseNotification[]
+            notifications: MiaNotification[]
             countNotifications: number
         }
         footer: {

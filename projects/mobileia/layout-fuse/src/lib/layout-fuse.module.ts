@@ -26,6 +26,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FuseFooterComponent } from './components/fuse-footer/fuse-footer.component';
 import { FuseHeaderComponent } from './components/fuse-header/fuse-header.component';
 import { FuseWidgetComponent } from './components/fuse-widget/fuse-widget.component';
+import { NotificationModule } from '@mobileia/notification';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,9 @@ import { FuseWidgetComponent } from './components/fuse-widget/fuse-widget.compon
     MatIconModule,
     MatInputModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+
+    NotificationModule
   ],
   exports: [
     LayoutFuseComponent,
