@@ -5,7 +5,7 @@ import { FuseSidebarService } from '../../services/fuse-sidebar.service';
 import { takeUntil } from 'rxjs/operators';
 import { FuseNavigationItem } from '../../types/fuse-navigation-item';
 import { FuseNotificationService } from '../../services/fuse-notification.service';
-import { MiaNotification } from '@mobileia/notification';
+import { MiaNotification, MiaNotificationService } from '@mobileia/notification';
 
 @Component({
   selector: 'mia-fuse-toolbar',
@@ -39,7 +39,8 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _fuseSidebarService: FuseSidebarService,
-        private fuseNotificationService: FuseNotificationService
+        private fuseNotificationService: FuseNotificationService,
+        private notificationService: MiaNotificationService
         //private _translateService: TranslateService
     )
     {
@@ -112,12 +113,25 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
                 this.userName = settings.layout.toolbar.userName;
                 this.isShowAvatar = settings.layout.toolbar.showAvatar;
                 this.isShowNotifications = settings.layout.toolbar.showNotifications;
-                this.notifications = settings.layout.toolbar.notifications;
+                //this.notifications = settings.layout.toolbar.notifications;
                 this.countNotifications = settings.layout.toolbar.countNotifications;
+                this.loadNotifications();
             });
 
         // Set the selected language from default languages
         //this.selectedLanguage = _.find(this.languages, {id: this._translateService.currentLang});
+    }
+
+    loadNotifications() {
+        if (!this.isShowNotifications) {
+            return;
+        }
+        // Cargar
+        this.notificationService.fetchLast().toPromise().then(data => {
+            if (data.success) {
+                this.notifications = data.response;
+            }
+        });
     }
 
     /**
