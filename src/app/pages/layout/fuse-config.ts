@@ -1,4 +1,5 @@
 import { FuseConfig } from 'projects/mobileia/layout-fuse/src/lib/types/fuse-config';
+import { FuseLoginConfig } from 'projects/mobileia/layout-fuse/src/lib/types/fuse-login-config';
 import { MiaNotification } from '@mobileia/notification';
 
 export const fuseConfig: FuseConfig = {
@@ -52,4 +53,18 @@ export const fuseConfig: FuseConfig = {
             position: 'right'
         }
     }
+};
+
+export const fuseLoginConfig: FuseLoginConfig = {
+    imageBackground: '',
+    imageLogo: 'assets/images/logos/cmsa_black.png',
+    title: '',
+    btnColorClass: 'default',
+    titleBtn: 'LOGIN',
+    isRecovery: false,
+    isRegister: false,
+    isRemember: false,
+    successRoute: '/dashboard',
+    verifyRole: false,
+    withRole: 0
 };

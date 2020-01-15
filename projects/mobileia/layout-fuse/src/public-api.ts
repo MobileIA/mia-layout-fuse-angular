@@ -37,6 +37,7 @@ export * from './lib/directives/fuse-perfect-scrollbar.directive';
  * Pages
  */
 export * from './lib/pages/fuse-login-page/fuse-login-page.component';
+export * from './lib/pages/fuse-login-two-page/fuse-login-two-page.component';
 
 /**
  * Others

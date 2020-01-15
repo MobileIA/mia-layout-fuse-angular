@@ -27,6 +27,7 @@ import { FuseFooterComponent } from './components/fuse-footer/fuse-footer.compon
 import { FuseHeaderComponent } from './components/fuse-header/fuse-header.component';
 import { FuseWidgetComponent } from './components/fuse-widget/fuse-widget.component';
 import { NotificationModule } from '@mobileia/notification';
+import { FuseLoginTwoPageComponent } from './pages/fuse-login-two-page/fuse-login-two-page.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { NotificationModule } from '@mobileia/notification';
     FuseToolbarComponent,
     FuseFooterComponent,
     FuseHeaderComponent,
-    FuseWidgetComponent
+    FuseWidgetComponent,
+    FuseLoginTwoPageComponent
   ],
   imports: [
     RouterModule,
