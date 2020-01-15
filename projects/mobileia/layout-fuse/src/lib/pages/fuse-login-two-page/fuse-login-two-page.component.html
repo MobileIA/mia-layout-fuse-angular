@@ -1,72 +1,66 @@
-<div id="login" class="inner-scroll" fxLayout="row" fxLayoutAlign="start">
-
-    <div id="login-intro" fxFlex fxHide fxShow.gt-xs>
-
-        <div class="logo" [@animate]="{value:'*',params:{scale:'0.2'}}">
-            <img src="assets/images/logos/fuse.svg">
-        </div>
-
-        <div class="title" [@animate]="{value:'*',params:{delay:'50ms',y:'25px'}}">
-            Welcome to the FUSE!
-        </div>
-
-        <div class="description" [@animate]="{value:'*',params:{delay:'100ms',y:'25px'}}">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper nisl erat, vel convallis elit fermentum pellentesque. Sed mollis velit facilisis facilisis viverra.
-        </div>
-
-    </div>
+<div id="login" class="inner-scroll" fxLayout="row" fxLayoutAlign="start" [ngStyle]="{'background': 'url(' + config.imageBackground + ') no-repeat' }">
 
     <div id="login-form-wrapper" fusePerfectScrollbar [@animate]="{value:'*',params:{delay:'300ms',x:'100%'}}">
 
         <div id="login-form">
 
-            <div class="logo" fxHide.gt-xs>
-                <img src="assets/images/logos/fuse.svg">
+            <div class="logo">
+                <img [src]="config.imageLogo">
             </div>
 
-            <div class="title">LOGIN TO YOUR ACCOUNT</div>
+            <div class="title">{{ config.title }}</div>
 
-            <form name="loginForm" [formGroup]="loginForm" novalidate>
+            <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
                     <input matInput formControlName="email">
                     <mat-icon matSuffix class="secondary-text">mail</mat-icon>
                     <mat-error *ngIf="loginForm.get('email').hasError('required')">
-                        Email is required
+                        Email es requerido
                     </mat-error>
                     <mat-error *ngIf="!loginForm.get('email').hasError('required') &&
-                                loginForm.get('email').hasError('email')">
-                        Please enter a valid email address
+                            loginForm.get('email').hasError('email')">
+                        Por favor ingrese un email valido.
                     </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
+                    <mat-label>Contraseña</mat-label>
                     <input matInput type="password" formControlName="password">
                     <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
                     <mat-error>
-                        Password is required
+                        La contraseña es necesaria
                     </mat-error>
                 </mat-form-field>
 
-                <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
-                    <mat-checkbox class="remember-me" aria-label="Remember Me">
+                <button mat-raised-button color="accent" class="submit-button" aria-label="LOGIN" [disabled]="loginForm.invalid">
+                    {{ config.titleBtn }}
+                </button>
+
+                <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="end center">
+                    <mat-checkbox *ngIf="config.isRemember" class="remember-me" aria-label="Remember Me">
                         Remember Me
                     </mat-checkbox>
 
-                    <a class="forgot-password" [routerLink]="'/pages/auth/forgot-password-2'">
-                        Forgot Password?
+                    <a *ngIf="config.isRecovery" class="forgot-password" [routerLink]="'/pages/auth/forgot-password-2'">
+                        Olvide mi contraseña
                     </a>
                 </div>
 
-                <button mat-raised-button color="accent" class="submit-button" aria-label="LOGIN" [disabled]="loginForm.invalid">
-                    LOGIN
-                </button>
+                <!--<div class="help-support" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space" fxLayoutAlign="space-between center">
+                    <a class="help-problem-account" [routerLink]="'/pages/auth/forgot-password-2'">
+                        Problemas con tu Cuenta?
+                    </a>
+
+                    <a class="support" [routerLink]="'/pages/auth/forgot-password-2'">
+                        Notificar a Soporte
+                    </a>
+                </div>-->
 
             </form>
 
-            <div class="separator">
+            <!-- <div class="separator">
                 <span class="text">OR</span>
             </div>
 
@@ -85,7 +79,25 @@
             <div class="register" fxLayout="column" fxLayoutAlign="center center">
                 <span class="text">Don't have an account?</span>
                 <a class="link" [routerLink]="'/pages/auth/register-2'">Create an account</a>
-            </div>
+            </div> -->
         </div>
     </div>
+
+    <!-- <div id="login-intro" fxFlex fxHide fxShow.gt-xs>
+
+        <div class="logo" [@animate]="{value:'*',params:{scale:'0.2'}}">
+            <img src="assets/images/logos/fuse.svg">
+        </div>
+
+        <div class="title" [@animate]="{value:'*',params:{delay:'50ms',y:'25px'}}">
+            Welcome to the FUSE!
+        </div>
+
+        <div class="description" [@animate]="{value:'*',params:{delay:'100ms',y:'25px'}}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper nisl erat, vel convallis elit fermentum pellentesque. Sed mollis velit facilisis facilisis viverra.
+        </div>
+
+    </div> -->
+
+
 </div>
