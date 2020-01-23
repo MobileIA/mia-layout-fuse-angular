@@ -34,6 +34,10 @@
                     </mat-error>
                 </mat-form-field>
 
+                <div *ngIf="loginMessageError != ''" class="" style="color: red; font-weight: bold;">
+                    <p>{{ loginMessageError }}</p>
+                </div>
+
                 <button mat-raised-button color="accent" class="submit-button" aria-label="LOGIN" [disabled]="loginForm.invalid">
                     {{ config.titleBtn }}
                 </button>
