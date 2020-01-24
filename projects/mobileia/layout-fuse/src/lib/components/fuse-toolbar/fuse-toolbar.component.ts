@@ -118,6 +118,8 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
                 this.loadNotifications();
             });
 
+        this.initRefreshNotification();
+
         // Set the selected language from default languages
         //this.selectedLanguage = _.find(this.languages, {id: this._translateService.currentLang});
     }
@@ -130,8 +132,40 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
         this.notificationService.fetchLast().toPromise().then(data => {
             if (data.success) {
                 this.notifications = data.response;
+                this.refreshNotRead();
             }
         });
+    }
+
+    initRefreshNotification() {
+        setInterval(() => {
+            if (this.notifications.length == 0) {
+                return;
+            }
+            let notId = this.notifications[0].id;
+            this.notificationService.fetchNews(notId).toPromise().then(data => {
+                if (!data.success) {
+                    return;
+                }
+
+                for (let i = data.response.length-1; i >= 0; i--) {
+                    const element = data.response[i];
+                    this.notifications.unshift(element);
+                }
+
+                this.refreshNotRead();
+            });
+        }, 10000);
+    }
+
+    refreshNotRead() {
+        let total = 0;
+        for (const not of this.notifications) {
+            if (not.is_read == 0) {
+                total += 1;
+            }
+        }
+        this.countNotifications = total;
     }
 
     /**
@@ -145,6 +179,7 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     }
 
     onClickNotification(notif: MiaNotification) {
+        this.notificationService.read(notif.id).toPromise().then(data => {});
         this.fuseNotificationService.clickNotification.next(notif);
     }
 
