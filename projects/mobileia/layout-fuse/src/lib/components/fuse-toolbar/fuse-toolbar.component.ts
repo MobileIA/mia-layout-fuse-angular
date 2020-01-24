@@ -179,6 +179,10 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
     }
 
     onClickNotification(notif: MiaNotification) {
+        if (notif.is_read == 0) {
+            this.countNotifications--;
+        }
+
         this.notificationService.read(notif.id).toPromise().then(data => {});
         this.fuseNotificationService.clickNotification.next(notif);
     }
