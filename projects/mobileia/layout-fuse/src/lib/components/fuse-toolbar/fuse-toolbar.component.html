@@ -36,7 +36,7 @@
                 <h5>Notificaciones:</h5>
 
                 <div class="box-scroll">
-                    <div *ngFor="let item of notifications" (click)="onClickNotification(item)" class="notification">
+                    <div *ngFor="let item of notifications" (click)="onClickNotification(item)" class="notification" [ngClass]="{'not-active': item.is_read == 0}">
                         <h3>{{ item.created_at | date:'MMM d, y' }}</h3>
                         <p [innerHTML]="item.caption"></p>
                     </div>

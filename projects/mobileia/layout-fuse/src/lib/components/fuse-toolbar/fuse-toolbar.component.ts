@@ -186,6 +186,7 @@ export class FuseToolbarComponent implements OnInit, OnDestroy {
 
         this.notificationService.read(notif.id).toPromise().then(data => {});
         this.fuseNotificationService.clickNotification.next(notif);
+        this.refreshNotRead();
     }
 
     // -----------------------------------------------------------------------------------------------------
