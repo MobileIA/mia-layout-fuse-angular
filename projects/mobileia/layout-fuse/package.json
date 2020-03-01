@@ -1,12 +1,12 @@
 {
     "name": "@mobileia/layout-fuse",
-    "version": "8.0.33",
+    "version": "8.0.35",
     "peerDependencies": {
         "@angular/common": "^8.2.7",
         "@angular/core": "^8.2.7",
         "@angular/material": "^8.2.0",
         "@angular/forms": "~8.2.7",
-        "@mobileia/authentication": "^8.0.1",
+        "@mobileia/authentication": "^8.0.7",
         "@mobileia/core": "^8.0.1",
         "@mobileia/notification": "^8.0.2",
         "@swimlane/ngx-datatable": "^16.0.2",

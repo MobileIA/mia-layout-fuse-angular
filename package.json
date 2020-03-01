@@ -23,7 +23,7 @@
         "@angular/platform-browser": "~8.2.7",
         "@angular/platform-browser-dynamic": "~8.2.7",
         "@angular/router": "~8.2.7",
-        "@mobileia/authentication": "^8.0.1",
+        "@mobileia/authentication": "^8.0.8",
         "@mobileia/core": "^8.0.1",
         "@mobileia/notification": "^8.0.2",
         "@ngx-pwa/local-storage": "^8.2.3",

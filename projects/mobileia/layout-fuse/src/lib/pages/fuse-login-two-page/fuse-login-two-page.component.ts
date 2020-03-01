@@ -7,6 +7,7 @@ import { AuthenticationService } from '@mobileia/authentication';
 import { switchMap, map } from 'rxjs/operators';
 import { DOCUMENT } from '@angular/common';
 import { AnimationPlayer, AnimationBuilder, style, animate } from '@angular/animations';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'mia-fuse-login-two-page',
@@ -50,20 +51,39 @@ export class FuseLoginTwoPageComponent implements OnInit {
   requestLogin(email: string, password: string) {
     // Limpiar mensaje de error
     this.loginMessageError = '';
-    this.authService.signInWithEmailAndPassword(email, password).toPromise().then(data => {
-      if (data.success) {
-
-        if (this.isValidRole(data.response.role)) {
-          this.router.navigateByUrl(this.config.successRoute);
+    // Verificar tipo de login
+    if (this.config.isInternal) {
+      this.authService.signInWithEmailAndPasswordInternal(email, password).toPromise().then(data => {
+        if (data.success) {
+  
+          if (this.isValidRole(data.response.user.role)) {
+            this.router.navigateByUrl(this.config.successRoute);
+          } else {
+            this.loginMessageError = 'Usted no tiene permisos para registrarse';
+            this.authService.signOut();
+          }
+  
         } else {
-          this.loginMessageError = 'Usted no tiene permisos para registrarse';
-          this.authService.signOut();
+          this.loginMessageError = data.error.message;
         }
-
-      } else {
-        this.loginMessageError = data.error.message;
-      }
-    });
+      });
+    } else {
+      this.authService.signInWithEmailAndPassword(email, password).toPromise().then(data => {
+        if (data.success) {
+  
+          if (this.isValidRole(data.response.role)) {
+            this.router.navigateByUrl(this.config.successRoute);
+          } else {
+            this.loginMessageError = 'Usted no tiene permisos para registrarse';
+            this.authService.signOut();
+          }
+  
+        } else {
+          this.loginMessageError = data.error.message;
+        }
+      });
+    }
+    
   }
 
   processConfig() {
@@ -93,6 +113,9 @@ export class FuseLoginTwoPageComponent implements OnInit {
     .subscribe(accessToken => {
       if (accessToken == null || accessToken == '' || accessToken == undefined) {
         this.hideSplash();
+      } else {
+        this.hideSplash();
+        this.router.navigateByUrl(this.config.successRoute);
       }
     });
   }

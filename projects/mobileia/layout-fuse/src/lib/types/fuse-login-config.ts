@@ -10,4 +10,5 @@ export interface FuseLoginConfig {
     successRoute: string;
     verifyRole: boolean;
     withRole: number;
+    isInternal: boolean;
 }
