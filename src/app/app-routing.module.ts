@@ -6,11 +6,13 @@ import { TestComponent } from './pages/test/test.component';
 import { TestTwoComponent } from './pages/test-two/test-two.component';
 
 import { fuseLoginConfig } from './pages/layout/fuse-config';
+import { AuthGuard } from '@mobileia/authentication';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'test',
@@ -23,14 +25,14 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'login',
+    path: 'login2',
     component: FuseLoginPageComponent,
     data: {
       config: fuseLoginConfig
     }
   },
   {
-    path: 'login2',
+    path: 'login',
     component: FuseLoginTwoPageComponent,
     data: {
       config: fuseLoginConfig

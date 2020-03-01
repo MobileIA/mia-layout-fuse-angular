@@ -67,5 +67,5 @@ export const fuseLoginConfig: FuseLoginConfig = {
     successRoute: '/dashboard',
     verifyRole: false,
     withRole: 0,
-    isInternal: false
+    isInternal: true
 };

@@ -11,6 +11,7 @@ import { TestComponent } from './pages/test/test.component';
 import { TestTwoComponent } from './pages/test-two/test-two.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { AuthenticationModule } from '@mobileia/authentication';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AuthenticationModule.forRoot({ apiKey: "0", isInternal: true, baseUrlInternal: 'http://0.0.0.0:8080/'}),
     LayoutFuseModule.forRoot(fuseConfig),
 
     MatIconModule,
