@@ -105,8 +105,8 @@ export class FuseLoginTwoPageComponent implements OnInit {
     }))
     .pipe(switchMap(isLogged => {
       if (isLogged) {
-        this.hideSplash();
         this.router.navigateByUrl(this.config.successRoute);
+        this.hideSplash();
       }
       return this.authService.getAccessToken();
     }))
@@ -114,8 +114,8 @@ export class FuseLoginTwoPageComponent implements OnInit {
       if (accessToken == null || accessToken == '' || accessToken == undefined) {
         this.hideSplash();
       } else {
-        this.hideSplash();
         this.router.navigateByUrl(this.config.successRoute);
+        this.hideSplash();
       }
     });
   }

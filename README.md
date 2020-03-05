@@ -4,6 +4,7 @@
 ```bash
 npm install @angular/flex-layout --save
 npm install perfect-scrollbar --save
+npm install @swimlane/ngx-datatable --save
 npm install @mobileia/notification --save
 npm install @mobileia/layout-fuse --save
 ```
@@ -110,6 +111,80 @@ export const fuseLoginConfig: FuseLoginConfig = {
       config: fuseLoginConfig
     }
   }
+```
+9. Crear componente System:
+```ts
+export class SystemComponent implements OnInit {
+
+  constructor(
+    private authService: AuthenticationService,
+    private fuseNavigationService: FuseNavigationService,
+    private fuseConfigService: FuseConfigService,
+    //private paginatorService: MatPaginatorIntl
+    private router: Router,
+  ) { }
+
+  ngOnInit(): void {
+    this.loadUser();
+    this.loadUserNav();
+    // Traducción del paginador
+    //this.paginatorService.itemsPerPageLabel = 'Items por pagina';
+  }
+
+  loadUser() {
+    this.authService.currentUser.subscribe(user => {
+      if (user == null) {
+        return;
+      }
+      // Cargar Usuario
+      fuseConfig.layout.toolbar.userName = 'Hola ' + user.firstname;
+      this.fuseConfigService.setConfig(fuseConfig);
+      //this.loadNav(user);
+    });
+  }
+
+  loadUserNav() {
+    fuseConfig.layout.toolbar.userMenu = [
+        {
+            id       : 'logout',
+            title    : 'Cerrar sesión',
+            type     : 'item',
+            icon     : 'exit_to_app',
+            function: (() => {
+              this.authService.signOut();
+              setTimeout(() => {
+                this.router.navigateByUrl('/').then(data => {
+                  window.location.reload();
+                });
+              }, 2000);
+            })
+        },
+    ];
+
+    //this.fuseConfigService.setConfig(fuseConfig);
+    this.fuseConfigService.config = fuseConfig;
+
+    // Register the navigation to the service
+    this.fuseNavigationService.register('main', fuseNavigation);
+    // Set the main navigation as our current navigation
+    this.fuseNavigationService.setCurrentNavigation('main');
+  }
+}
+```
+10. Agregar en styles.scss:
+```scss
+@import "~@mobileia/layout-fuse/scss/core"; // Modo productivo
+@import "~@mobileia/layout-fuse/scss/app.theme"; // Modo productivo
+```
+11. Agregar en app.component.ts:
+```ts
+encapsulation: ViewEncapsulation.None
+```
+12. Agregar CSS a app.component.scss:
+```scss
+app-root {
+    width: 100%;
+}
 ```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
