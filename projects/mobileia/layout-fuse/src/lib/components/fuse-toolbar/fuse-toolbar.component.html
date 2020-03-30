@@ -24,7 +24,7 @@
 
         <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
 
-            <button mat-button [matMenuTriggerFor]="notificationMenu" class="user-button">
+            <button *ngIf="isShowNotifications" mat-button [matMenuTriggerFor]="notificationMenu" class="user-button">
                 <div fxLayout="row" fxLayoutAlign="center center">
                     <mat-icon class="s-16" fxHide.xs>notifications</mat-icon>
                     <div *ngIf="countNotifications > 0" class="unread-count warn">{{ countNotifications }}</div>
